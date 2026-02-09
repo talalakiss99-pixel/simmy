@@ -2,32 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Valentine 💖</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- BACKGROUND SLIDESHOW -->
+  <!-- ===== BACKGROUND SLIDESHOW ===== -->
   <div class="slideshow">
-    <img src="slide1.jpg.jpeg" class="slide active">
-    <img src="slide2.jpg.jpeg" class="slide">
-    <img src="slide3.jpg.jpeg" class="slide">
-    <img src="slide4.jpg.jpeg" class="slide">
-    <img src="slide5.jpg.jpeg" class="slide">
-    <img src="slide6.jpg.jpeg" class="slide">
-    <img src="slide7.jpg.jpeg" class="slide">
-    <img src="slide8.jpg.jpeg" class="slide">
-    <img src="slide9.jpg.jpeg" class="slide">
-    <img src="slide10.jpg.jpeg" class="slide">
+    <img src="slide1.jpg.jpeg" class="slide active" />
+    <img src="slide2.jpg.jpeg" class="slide" />
+    <img src="slide3.jpg.jpeg" class="slide" />
+    <img src="slide4.jpg.jpeg" class="slide" />
+    <img src="slide5.jpg.jpeg" class="slide" />
+    <img src="slide6.jpg.jpeg" class="slide" />
+    <img src="slide7.jpg.jpeg" class="slide" />
+    <img src="slide8.jpg.jpeg" class="slide" />
+    <img src="slide9.jpg.jpeg" class="slide" />
+    <img src="slide10.jpg.jpeg" class="slide" />
   </div>
 
+  <!-- ===== MAIN CONTENT ===== -->
   <div class="container">
     <div class="card" id="card">
+
       <div class="icon" id="icon">🐻</div>
 
-      <h1 id="question">Simmy, My Love, will you be my Valentine?</h1>
+      <h1 id="question">
+        Simmy, My Love,<br />
+        will you be my Valentine?
+      </h1>
+
       <p id="timer">Time elapsed: 0s ⏳</p>
 
       <div class="buttons" id="buttons">
@@ -35,20 +48,41 @@
         <button id="noBtn">No 😅</button>
       </div>
 
+      <!-- Celebration shown after YES -->
       <div class="celebration hidden" id="celebration">
-        <img src="https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif" alt="Yay">
+        <img
+          src="https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif"
+          alt="Celebration"
+        />
       </div>
+
     </div>
   </div>
 
+  <!-- Confetti Canvas -->
   <canvas id="confetti"></canvas>
 
-  <audio id="fireworksSound" src="https://www.soundjay.com/fireworks/fireworks-1.mp3"></audio>
+  <!-- Fireworks Sound -->
+  <audio
+    id="fireworksSound"
+    src="https://www.soundjay.com/fireworks/fireworks-1.mp3"
+    preload="auto"
+  ></audio>
 
-  <!-- Hidden YouTube player for the song -->
-  <iframe id="loveSong" width="0" height="0" src="" frameborder="0" allow="autoplay"></iframe>
+  <!-- Hidden YouTube player (music starts on interaction) -->
+  <iframe
+    id="loveSong"
+    width="0"
+    height="0"
+    src=""
+    frameborder="0"
+    allow="autoplay"
+  ></iframe>
 
+  <!-- Main Script -->
   <script src="script.js"></script>
+
 </body>
 </html>
+
 
