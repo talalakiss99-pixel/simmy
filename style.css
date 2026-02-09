@@ -1,55 +1,17 @@
+/* ===== RESET & BASE ===== */
 body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
+  background: #fdebed; /* fallback pink */
 }
 
-.container {
-  position: fixed;
-  inset: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-  z-index: 10;
-}
-
-
-.card {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 30px;
-  border-radius: 20px;
-  width: 320px;
-  position: relative;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  margin: 0 auto;
-}
-
-button {
-  padding: 12px 20px;
-  margin: 10px;
-  border: none;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-#yesBtn { background: #ff4d6d; color: white; }
-#noBtn { background: #ccc; }
-
-.hidden { display: none; }
-
-/* SLIDESHOW */
+/* ===== SLIDESHOW BACKGROUND ===== */
 .slideshow {
   position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   overflow: hidden;
 }
 
@@ -62,43 +24,99 @@ button {
   transition: opacity 2s ease-in-out;
 }
 
-.slide.active { opacity: 1; }
+.slide.active {
+  opacity: 1;
+}
 
+/* Pink romantic overlay */
 .slideshow::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(255, 192, 203, 0.35);
   backdrop-filter: blur(5px);
-  z-index: 1;
 }
 
-/* AGGRESSIVE SHAKE */
-.shake { animation: shake 0.3s infinite; }
+/* ===== CONTAINER (neutral, no centering) ===== */
+.container {
+  position: static;
+}
+
+/* ===== CARD (TRUE CENTER, BULLETPROOF) ===== */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  width: 320px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  z-index: 20;
+  text-align: center;
+}
+
+/* ===== BUTTONS ===== */
+button {
+  padding: 12px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#yesBtn {
+  background: #ff4d6d;
+  color: white;
+}
+
+#noBtn {
+  background: #ccc;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ===== AGGRESSIVE SHAKE ===== */
+.shake {
+  animation: shake 0.3s infinite;
+}
 
 @keyframes shake {
-  0% { transform: translate(0); }
-  25% { transform: translate(-6px, 6px); }
-  50% { transform: translate(6px, -6px); }
-  75% { transform: translate(-6px, -6px); }
-  100% { transform: translate(6px, 6px); }
+  0%   { transform: translate(-50%, -50%) translate(0); }
+  25%  { transform: translate(-50%, -50%) translate(-6px, 6px); }
+  50%  { transform: translate(-50%, -50%) translate(6px, -6px); }
+  75%  { transform: translate(-50%, -50%) translate(-6px, -6px); }
+  100% { transform: translate(-50%, -50%) translate(6px, 6px); }
 }
 
-/* KISSES */
+/* ===== KISSES ===== */
 .kiss {
   position: fixed;
   bottom: -20px;
   font-size: 30px;
   animation: floatUp 3s ease-in forwards;
   pointer-events: none;
+  z-index: 15;
 }
 
 @keyframes floatUp {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(-600px); opacity: 0; }
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-600px);
+    opacity: 0;
+  }
 }
 
-/* Peanut Simmy floating text */
+/* ===== PEANUT 💕 SIMMY FLOATING TEXT ===== */
 .peanut {
   position: fixed;
   bottom: -30px;
@@ -106,10 +124,20 @@ button {
   font-weight: 600;
   animation: floatUpPeanut 6s linear forwards;
   pointer-events: none;
+  z-index: 15;
 }
 
 @keyframes floatUpPeanut {
-  0% { transform: translateY(0); opacity: 0; }
-  10% { opacity: 1; }
-  100% { transform: translateY(-800px); opacity: 0; }
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-800px);
+    opacity: 0;
+  }
 }
+
