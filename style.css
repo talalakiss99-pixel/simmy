@@ -1,0 +1,102 @@
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.container { text-align: center; }
+
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  width: 320px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+button {
+  padding: 12px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#yesBtn { background: #ff4d6d; color: white; }
+#noBtn { background: #ccc; }
+
+.hidden { display: none; }
+
+/* SLIDESHOW */
+.slideshow {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.slide.active { opacity: 1; }
+
+.slideshow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 192, 203, 0.35);
+  backdrop-filter: blur(5px);
+}
+
+/* AGGRESSIVE SHAKE */
+.shake { animation: shake 0.3s infinite; }
+
+@keyframes shake {
+  0% { transform: translate(0); }
+  25% { transform: translate(-6px, 6px); }
+  50% { transform: translate(6px, -6px); }
+  75% { transform: translate(-6px, -6px); }
+  100% { transform: translate(6px, 6px); }
+}
+
+/* KISSES */
+.kiss {
+  position: fixed;
+  bottom: -20px;
+  font-size: 30px;
+  animation: floatUp 3s ease-in forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-600px); opacity: 0; }
+}
+
+/* Peanut Simmy floating text */
+.peanut {
+  position: fixed;
+  bottom: -30px;
+  color: #ff4d6d;
+  font-weight: 600;
+  animation: floatUpPeanut 6s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUpPeanut {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(-800px); opacity: 0; }
+}
