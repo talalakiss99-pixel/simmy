@@ -8,7 +8,19 @@ body {
   overflow: hidden;
 }
 
-.container { text-align: center; }
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
 
 .card {
   background: rgba(255, 255, 255, 0.9);
@@ -17,6 +29,7 @@ body {
   width: 320px;
   position: relative;
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  margin: 0 auto;
 }
 
 button {
